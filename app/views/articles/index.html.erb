@@ -1,0 +1,19 @@
+<h1>Interesting articles to be found here:</h1>
+<p><%= link_to '~~> Create an article', new_article_path %></p>
+<ul class="list-unstyled">
+	<% @articles.each do |article| %>
+	<li>
+		<%= link_to article_path(article) do %>
+		<div class="row ">
+			<div class="col-xs-2">
+				<img class="img-list" src="https://picsum.photos/100?random" alt="">
+			</div>
+			<div class="col-xs-10">
+				<h4><%= article.id %>...<%= article.title %></h4>
+				<p><%= article.content %></p>
+			</div>
+		</div>
+		<% end  %>
+	</li>
+	<% end %>
+</ul>
